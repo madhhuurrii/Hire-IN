@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel = "icon" type = "image/png" href = "assets/images/briefcase.png">
+    
+		<!--ICONS-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel = "icon" type = "image/png" href = "assets/images/breifcase.png">
+   
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css"
+		/>
+		<!-- Font Awesome CSS -->
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<title>HireNow | HireIN</title>
+	</head>
+	<body class="hire-login">
+		<%- include('nav') %>
+		<div class="container  hire-login-container my-5 py-5">
+			<div class="row mx-2 justify-content-md-center">
+				<div class="col home-col home-r-col d-md-block d-none">
+					<div class="mt-5">
+						<div class="Sub-Chapters">
+							<div class="subChp-title mx-3 mb-2 text-center">
+								HirePrep
+							</div>
+							<p class="subChp-text mx-3 p-2 text-justify">
+								Effective preparition of Interview.From filters that save time to in-built chat that makes interacting with the candidates super easy, experience the world of hassle free hiring.
+							</p>
+							<div class="subChp-title mx-3 mb-2 text-center">
+								HireExplore
+							</div>
+							<p class="subChp-text mx-3 p-2 text-justify">
+								Internship and job seekers from all over India can search and apply for internships and jobs relevant to their coursework and interest free of cost. 
+							</p>
+							<div class="subChp-title mx-3 mb-2 text-center">
+								HireNow
+							</div>
+							<p class="subChp-text mx-3 p-2 text-justify">
+								Organization & individuals looking to hire interns and/or full-time employees can post their internship and/or job requirement on HireIN. Currently, internships are posted for free and a fee of INR 4999 is charged from the employers for posting a full-time job.
+							</p>
+							<div class="subChp-title mx-3 mb-2 text-center">
+								HireLearn
+							</div>
+							<p class="subChp-text mx-3 p-2 text-justify">
+								HireIN offers a variety of online training programs across multiple disciplines (Machine Learning, Web Development, Digital Marketing, Java, French and several others) which students can do from the comfort of their homes and learn the skills needed in today’s industry. 
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col home-col home-l-col">
+					<div class="my-3">
+						<form id="hirenow-form" action="/" target="_blank" enctype="multipart/form-data" class="p-4 signup-form">
+							<div class="pb-3 text-center form-title">
+								<h2>HireNow Form</h2>
+							</div>
+							<div class="form-group">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Name :</label
+							>
+								<input
+									type="name"
+									class="form-control"
+									required
+									id="hirenow-name"
+									placeholder=""
+								/>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Email :</label
+							>
+								<input
+									type="email"
+									class="form-control"
+									required
+									id="hirenow-email"
+									placeholder=""
+								/>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Company:</label
+							>
+								<input
+									type="clgname"
+									class="form-control"
+									required
+									id="hirenow-company"
+									placeholder=""
+								/>
+							</div>
+							<div class="form-group row pt-3">
+								<div class="col-6 col-sm-6">
+									<label
+									for="exampleInputPassword1"
+									class="hire-login-subtitle"
+									>Hire Position :</label
+								>
+									<input
+										type="branch"
+										class="form-control"
+										required
+										id="hirenow-position"
+										placeholder=""
+									/>
+								</div>
+								<div class="col-6 col-sm-6">
+									<label
+									for="exampleInputPassword1"
+									class="hire-login-subtitle"
+									>Hire Eligibilty :</label
+								>
+									<input
+										type="year"
+										class="form-control"
+										required
+										id="hirenow-eli"
+										placeholder=""
+									/>
+								</div>
+							</div>
+							<div class="form-group row pt-3">
+								<div class="col-6 col-sm-6">
+									<label
+									for="exampleInputPassword1"
+									class="hire-login-subtitle"
+									>Stipend :</label
+								>
+									<input
+										type="branch"
+										class="form-control"
+										required
+										id="hirenow-stipend"
+										placeholder=""
+									/>
+								</div>
+								<div class="col-6 col-sm-6">
+									<label
+									for="exampleInputPassword1"
+									class="hire-login-subtitle"
+									>End Date :</label
+								>
+									<input
+										type="date"
+										class="form-control"
+										required
+										id="hirenow-date"
+										placeholder=" "
+									/>
+								</div>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Contact Number :</label
+							>
+								<input
+									type="contact"
+									class="form-control"
+									required
+									id="hirenow-contact"
+									placeholder=""
+								/>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Company Email:</label
+							>
+								<input
+									type="email"
+									class="form-control"
+									required
+									id='hirenow-companyemail'
+									placeholder=""
+								/>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Job Portal:</label
+							>
+								<input
+									type="text"
+									class="form-control"
+									required
+									id='hirenow-link'
+									placeholder=""
+								/>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Job Description:</label
+							>
+								<textarea
+									type="text area"
+									class="form-control"
+									required
+									id='hirenow-desc'
+									size="5"
+									placeholder=""
+								></textarea>
+							</div>
+							<div class="form-group pt-3">
+								<label
+								for="exampleInputPassword1"
+								class="hire-login-subtitle"
+								>Job Image:</label
+							>
+								<input
+									type="file"
+									class="form-control"
+									name="file"
+									required
+									id='file'
+									size="3"
+									mulitiple="mulitiple"
+									accept="image/*"
+									placeholder=""
+								/>
+							</div>
+							<div class="checkbox pt-3 pb-3">
+								<label class="hire-login-subtitle px-3"><input type="checkbox" class="hire-login-subtitle" value="">&nbsp;I agree to all the terms & condition implied by HireIN</label>
+							  </div>
+							<div class="d-grid gap-2 pb-2 text-center">
+								<input
+									type="submit"
+									value="HireNow"
+									class=" hire-login-submit p-2 w-100
+										btn btn-round
+										login-button
+										text-white
+										bg-success
+									"
+							    />
+					
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%- include('footer') %>
+		<script>
+			const hirenow = document.getElementById("hirenow-form");
+			hirenow.addEventListener('submit', hireNow);
+
+			async function hireNow(event){
+				event.preventDefault()
+                const hirename = document.getElementById("hirenow-name").value;
+				const hireemail = document.getElementById("hirenow-email").value;
+				const hirecompany = document.getElementById("hirenow-company").value;
+				const hireposition = document.getElementById("hirenow-position").value;
+				const hireeli = document.getElementById("hirenow-eli").value;
+				const hirestipend = document.getElementById("hirenow-stipend").value;
+				const hiredate = document.getElementById("hirenow-date").value;
+				const hirecontact = document.getElementById("hirenow-contact").value;
+				const hirecompanyemail = document.getElementById("hirenow-companyemail").value;
+				const hiredesc = document.getElementById("hirenow-desc").value;
+				const hirelink = document.getElementById("hirenow-link").value;
+				// const avatar = document.getElementById("img").image;
+
+				const data1 =await fetch("/hirenow",{
+					method : 'POST',
+								headers: {
+				'Content-Type': 'application/json'
+				},
+                body : JSON.stringify({
+                   hirename,
+				   hireemail,
+				   hirecompany,
+				   hireposition,
+				   hirestipend,
+				   hireeli,
+				   hiredate,
+				   hirecontact,
+				   hirecompanyemail,
+				   hiredesc,
+				   hirelink
+				 
+				   
+				})
+				}).then((res)=>res.json())
+
+				if(data1.status ==='ok'){
+    console.log("got token", data1.data);
+    alert("Job Instance Created Successfully!")
+    window.open('/explore');
+   
+  }
+  else{
+    alert(data1.error);
+  }
+				
+			}
+		</script>
+	</body>
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+        // var form = document.querySelector("form")
+		// form.addEventListener("submit",
+		// function(event){
+		// 	event.preventDefault();
+		// 	var timestamp = Number(new Date());
+		// 	var storageRef = firebase.storage().ref(timestamp.toString());
+		// 	var $ = jQuery;
+		// 	var file_data = $("#img").props("files")[0];
+
+		// 	storageRef.put(file_data);
+		// })
+
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		  apiKey: "AIzaSyDrV889bdPCc3Y-Q1UyWA-49e5lLTNpfW0",
+		  authDomain: "hirein-login.firebaseapp.com",
+		  projectId: "hirein-login",
+		  storageBucket: "hirein-login.appspot.com",
+		  messagingSenderId: "863597019566",
+		  appId: "1:863597019566:web:a087123aad4a47d924483f",
+		  measurementId: "G-W5D9HNL3YL"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+	  </script>
+</html>

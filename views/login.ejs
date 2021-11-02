@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel = "icon" type = "image/png" href = "assets/images/briefcase.png">
+    
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <title>HireIN | Login</title>
+    </head>
+    <body class="hire-login">
+        <section class="p-lg-5 p-md-5 m-5">
+            <div class="container hire-login-container p-5">
+                <div class="text-center pb-4 h2 hire-login-title">HireIN</div>
+                <form id="login-form" action="/index"  target="_blank">
+                    <div class="form-group">
+                        <label
+                            for="exampleInputEmail1"
+                            class="hire-login-subtitle"
+                            >Email :</label
+                        >
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            id="email"
+                            autocomplete="off"
+                            aria-describedby="emailHelp"
+                            placeholder=""
+                        />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label
+                            for="exampleInputPassword1"
+                            class="hire-login-subtitle"
+                            >Password :</label
+                        >
+                        <input
+                            type="password"
+                            name="password"
+                            autocomplete="off"
+                            class="form-control"
+                            id="password"
+                            placeholder=""
+                        />
+                    </div>
+                    <br />
+                    <input
+                        type="submit"
+                        value="SUBMIT"
+                        class="hire-login-submit p-2 w-100"
+                    />
+                     
+                    
+                    <small
+                        class="
+                            hire-login-small
+                            align-items-center
+                            px-lg-5
+                            mx-lg-2
+                        "
+                        >Create New Account, <a href="/register">Sign Up</a></small
+                    >
+                    <label id="error-message"></label>
+                </form>
+            </div>
+        </section>
+
+       
+        <!-- Optional JavaScript; choose one of the two! -->
+        
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            const loginform = document.getElementById("login-form");
+loginform.addEventListener('submit', loginUser);
+
+async function loginUser(event){
+  event.preventDefault()
+  const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  
+  const result =await fetch("/login", {
+    method : 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body : JSON.stringify({
+     
+      email,
+      password
+      
+    })
+
+  }).then((res)=> res.json())
+  
+  if(result.status ==='ok'){
+    console.log("got token", result.data);
+    alert("loginned Successfully!")
+    window.open('/index');
+   
+  }else{
+    alert(result.error);
+  }
+}
+        </script>
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    --></body>
+</html>

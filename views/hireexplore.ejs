@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel = "icon" type = "image/png" href = "assets/images/briefcase.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <title>HireExplore | HireIN</title>
+  </head>
+  <body>
+    <%- include('nav') %>
+    <h3
+        class="
+          about-headlines
+          text-center 
+          p-5
+          pb-5
+          fs-2
+          fw-bolder
+        "
+      > 
+      <span class="position-relative underline-green"
+          >HireExplore</span
+        >
+      </h3>
+    <section class="hire">
+        <div class="row mx-lg-5 mx-md-3 p-lg-1 p-md-4">
+            <!-- <div class="col-md-3 m-lg-0 m-md-5 pb-4">
+                <div class="hire-block  p-lg-2 p-md-0 fs-4 fw-bold text-center" onclick="filterSelection('cars')">INTERNSHIP</div>
+            </div>
+            <div class="col-md-3 m-lg-0 m-md-5 pb-4">
+                <div class="hire-block p-lg-2 p-md-0 fs-4 fw-bold text-center" onclick="filterSelection('hackathon')">HACKATHON</div>
+            </div>
+            <div class="col-md-3 m-lg-0 m-md-3 pb-4">
+                <div class="hire-block p-lg-2 p-md-0 fs-4 fw-bold text-center" onclick="filterSelection('linkedin')">LINKEDIN</div>
+            </div>
+            <div class="col-md-3  m-lg-0 m-md-3 pb-4">
+                <div class="hire-block p-lg-2 p-md-0 fs-4 fw-bold text-center"  onclick="filterSelection('career')">CAREER PAGE</div>
+            </div> -->
+            <ul class="nav nav-pills mb-3 row mx-lg-5 aligin-items-center  justify-content-center mx-md-3 p-lg-1 p-md-4" id="pills-tab" role="tablist">
+              <li class="nav-item hire-block col-md-3  hire-block-title p-lg-2 p-md-0 m-lg-1 m-md-5 pb-4 text-center">
+                <a class="active hire-block-title text-decoration-none p-lg-2 p-md-0 fs-4 fw-bold text-center" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">CAREER PAGE</a>
+              </li>
+              <li class="nav-item hire-block hire-block-title  col-md-3 p-lg-2 p-md-0  m-lg-1 m-md-5 pb-4 text-center">
+                <a class="p-lg-2 hire-block-title p-md-0 text-decoration-none fs-4 fw-bold text-center " id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">HACKATHONS</a>
+              </li>
+              <li class="nav-item hire-block hire-block-title  p-lg-2 p-md-0 col-md-3 m-lg-1 m-md-5 pb-4 text-center">
+                <a class="hire-block-title text-decoration-none p-lg-2 p-md-0 fs-4 fw-bold text-center" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">LINKEDIN</a>
+              </li>
+              <!-- <li class="nav-item hire-block  p-lg-2 p-md-0 col-md-3 m-lg-1 m-md-5 pb-4 text-center">
+                <a class=" text-decoration-none p-lg-2 p-md-0 fs-4 fw-bold text-center" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="container pt-5 pb-4">
+                  <%exploList.forEach(explo =>{%>
+                        <div class="container events-container p-4 mb-5" id="explore-card">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <img
+                          src="assets/images/goldman.jpg"
+                          class="
+                            img-thumbnail img-fluid
+                            w-100
+                            events-bg-img
+                            rounded
+                            p-2
+                          "
+                        />
+                      </div>
+                      <div class="col-md-8 p-3 events-desc">
+                        <div class="row">
+                          <p>
+                            <span class="fw-bold fs-3"><%= explo.hireposition%> | <%= explo.hirecompany%></span>
+                            <br /><p>
+                            <span class="fw-normal text-center"
+                              ><%=explo.hiredesc%>
+                            </span>
+                          </p>
+                          <br />
+            
+                          <div>
+                            <span class="fw-bolder col-12">DATE: </span><%= explo.hiredate%>
+                          </div>
+            
+                          <div>
+                            <span class="fw-bolder col-md-6"> STIPEND : </span>Rs.<%= explo.hirestipend%> 
+                            <span class="fw-bolder col-md-6"> ELIGIBILTY : </span><%= explo.hireeli%> 
+                          </div>
+                          <div>
+                            <span class="fw-bolder col-12">DATE: </span><%= explo.hiredate%>
+                          </div>
+                        </div>
+                                    <br />
+                        <div class="row float-end">
+                          <div class="d-inline-flex">
+                            <!-- <a
+                              href="#"
+                              class="
+                                p-2
+                                pe-lg-5
+                                ps-lg-5
+                                text-decoration-none
+                                text-success
+                                fs-6
+                                ps-lg-3
+                                btn-events
+                              "
+                              data-bs-toggle="modal"
+                              data-bs-target="#staticBackdrop"
+                              >To Know More</a
+                            > -->
+                            &nbsp; &nbsp;
+                            <a
+                              href="<%= explo.hirelink%>"
+                              class="
+                                p-2
+                                pe-lg-5
+                                ps-lg-5
+                                text-decoration-none
+                                text-success
+                                fs-6
+                                ps-lg-3
+                                btn-events
+                              "
+                              >Register Now</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <%})%>
+                    </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="container pt-5 pb-4">
+               
+                        <div class="container events-container p-4 mb-5" id="explore-card">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <img
+                          src="assets/images/gh.png"
+                          class="
+                            img-thumbnail img-fluid
+                            w-100
+                            events-bg-img
+                            rounded
+                            p-2
+                          "
+                        />
+                      </div>
+                      <div class="col-md-8 p-3 events-desc">
+                        <div class="row">
+                          <p>
+                            <span class="fw-bold fs-3"> GraceHacks 2021 </span>
+                            <br /><p>
+                            <span class="fw-normal text-center"
+                              >The GraceHacks team is dedicated to encouraging attendees to close the gender gap, explore technology, and create new ideas. Participants will get twelve hours to make something from the ground up and present it to judges. The hackathon will also include sponsors, coordinators, speakers, snacks, food, prizes, and a lot of swag items. The event will be a great place for attendees to network, build experience, and learn new skills.
+
+                              As part of the efforts to host a wonderful event for GraceHacks attendees, the team is currently working hard to reach out to corporations and campus organizations for funding. The students wish to reach out to as many female/non binary folks at UCSC and other universities through social media, for which they are currently developing promotional flyers and designs.
+                            </span>
+                          </p>
+                          <br />
+            
+                          <div>
+                            <span class="fw-bolder col-12">DATE: </span> 13th to 15th November 2021
+                          </div>
+            
+                          <div>
+                            <span class="fw-bolder col-md-6"> PRIZES : </span> TBA
+                            <span class="fw-bolder col-md-6"> ELIGIBILTY : </span> Women and Non-binary Students
+                          </div>
+                          <!-- <div>
+                            <span class="fw-bolder col-12">: </span>
+                          </div> -->
+                        </div>
+                                    <br />
+                        <div class="row float-end">
+                          <div class="d-inline-flex">
+                            <a
+                              href="https://www.santacruzworks.org/news/gracehacks-is-dedicated-to-close-the-gender-gap"
+                              class="
+                                p-2
+                                pe-lg-5
+                                ps-lg-5
+                                text-decoration-none
+                                text-success
+                                fs-6
+                                ps-lg-3
+                                btn-events
+                              "
+                              data-bs-toggle="modal"
+                              data-bs-target="#staticBackdrop"
+                              >To Know More</a
+                            >
+                            &nbsp; &nbsp;
+                            <a
+                              href="https://grace-hacks.com/"
+                              class="
+                                p-2
+                                pe-lg-5
+                                ps-lg-5
+                                text-decoration-none
+                                text-success
+                                fs-6
+                                ps-lg-3
+                                btn-events
+                              "
+                              >Register Now</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                    </div>
+                    <div class="container pt-5 pb-4">
+               
+                      <div class="container events-container p-4 mb-5" id="explore-card">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/images/technica.jpg"
+                        class="
+                          img-thumbnail img-fluid
+                          w-100
+                          events-bg-img
+                          rounded
+                          p-2
+                        "
+                      />
+                    </div>
+                    <div class="col-md-8 p-3 events-desc">
+                      <div class="row">
+                        <p>
+                          <span class="fw-bold fs-3"> Technica 2021 </span>
+                          <br /><p>
+                          <span class="fw-normal text-center"
+                            >Technica will be held from November 13-14th 2021 over a 24 hour period. What will Technica be like this year? This year Technica will be integrating a hybrid model as we continue adapting through the pandemic. This means Technica will be held both online and in person - not just at UMD!</span>
+                        </p>
+                        <br />
+          
+                        <div>
+                          <span class="fw-bolder col-12">DATE: </span> 13th to 15th November 2021
+                        </div>
+          
+                        <div>
+                          <span class="fw-bolder col-md-6"> PRIZES : </span> TBA
+                          <span class="fw-bolder col-md-6"> ELIGIBILTY : </span> Undergraduate Students
+                        </div>
+                        <!-- <div>
+                          <span class="fw-bolder col-12">: </span>
+                        </div> -->
+                      </div>
+                                  <br />
+                      <div class="row float-end">
+                        <div class="d-inline-flex">
+                          <a
+                            href="https://gotechnica.org/#:~:text=Technica%20will%20be%20held%20from%20November%2013-14th%202021,and%20in%20person%20-%20not%20just%20at%20UMD%21"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
+                            >To Know More</a
+                          >
+                          &nbsp; &nbsp;
+                          <a
+                            href="https://gotechnica.org/#:~:text=Technica%20will%20be%20held%20from%20November%2013-14th%202021,and%20in%20person%20-%20not%20just%20at%20UMD%21"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            >Register Now</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><div class="container pt-5 pb-4">
+                
+                      <div class="container events-container p-4 mb-5" id="explore-card">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/images/wq.jpg"
+                        class="
+                          img-thumbnail img-fluid
+                          w-100
+                          events-bg-img
+                          rounded
+                          p-2
+                        "
+                      />
+                    </div>
+                    <div class="col-md-8 p-3 events-desc">
+                      <div class="row">
+                        <p>
+                          <span class="fw-bold fs-3">Software Engineering Intern | WorldQuant </span>
+                          <br /><p>
+                          <span class="fw-normal text-center"
+                            > We are seeking an exceptionally talented engineer to join our software engineering team. You will have the opportunity to work on financial industry datasets and would be responsible for creating data managers out of these which will be used across all verticals be it researchers or Portfolio Managers. We are working on couple of new technologies and would be using these to create a robust framework for data cleansing, QA , support automation and new methodologies for reading and storing data ( Example Parquet files , AOL )
+                          </span>
+                        </p>
+                        <br />
+          
+                        <div>
+                          <span class="fw-bolder col-12">DATE:  </span>21/11/2021
+                        </div>
+          
+                        <div>
+                          <span class="fw-bolder col-md-6"> STIPEND : </span>Rs.10000 
+                          <span class="fw-bolder col-md-6"> ELIGIBILTY :  </span>Undergraduate Students
+                        </div>
+                        <!-- <div>
+                          <span class="fw-bolder col-12">: </span>
+                        </div> -->
+                      </div>
+                                  <br />
+                      <div class="row float-end">
+                        <div class="d-inline-flex">
+                          <a
+                            href="https://www.linkedin.com/jobs/view/software-engineering-intern-at-worldquant-2765756669/?originalSubdomain=in"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
+                            >To Know More</a
+                          >
+                          &nbsp; &nbsp;
+                          <a
+                            href="https://recruitingbypaycor.com/career/JobIntroduction.action?clientId=8a7883c6603459fe016047c420730543&id=8a7883a8784b99b101786a96beaf2070&source=&lang=en"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            >Apply Now</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+               
+                <div class="container events-container p-4 mb-5" id="explore-card">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/images/cb.jpg"
+                        class="
+                          img-thumbnail img-fluid
+                          w-100
+                          events-bg-img
+                          rounded
+                          p-2
+                        "
+                      />
+                    </div>
+                    <div class="col-md-8 p-3 events-desc">
+                      <div class="row">
+                        <p>
+                          <span class="fw-bold fs-3">Software Engineering Intern | ChargeBee </span>
+                          <br /><p>
+                          <span class="fw-normal text-center"
+                            > We are looking for an intern to join our Cloud Technology team at Chargebee You should have a passion for building, maintaining, and improving Cloud Infrastructure that helps build a reliable customer experience. You will be working in a team to deploy new tools and handle our infrastructure, associated processes, and systems. You will also be helping engineers to streamline our processes and automating them wherever applicable.</span>
+                        </p>
+                        <br />
+          
+                        <div>
+                          <span class="fw-bolder col-12">DATE:  </span>21/11/2021
+                        </div>
+          
+                        <div>
+                          <span class="fw-bolder col-md-6"> STIPEND : </span>Rs.10000 
+                          <span class="fw-bolder col-md-6"> ELIGIBILTY :  </span>Minimum of a Bachelor’s degree in computer science
+                        </div>
+                        <!-- <div>
+                          <span class="fw-bolder col-12">: </span>
+                        </div> -->
+                      </div>
+                                  <br />
+                      <div class="row float-end">
+                        <div class="d-inline-flex">
+                          <a
+                            href="https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2740187585"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
+                            >To Know More</a
+                          >
+                          &nbsp; &nbsp;
+                          <a
+                            href="https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2740187585"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            >Apply Now</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container events-container p-4 mb-5" id="explore-card">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/images/cartah.jpg"
+                        class="
+                          img-thumbnail img-fluid
+                          w-100
+                          events-bg-img
+                          rounded
+                          p-2
+                        "
+                      />
+                    </div>
+                    <div class="col-md-8 p-3 events-desc">
+                      <div class="row">
+                        <p>
+                          <span class="fw-bold fs-3">Software Engineering Intern | Carta HealthCare</span>
+                          <br /><p>
+                          <span class="fw-normal text-center"
+                            > Our company is seeking to hire a software engineer intern (fresher) to help with the development of our current projects. Your duties will primarily revolve around building software by writing code, as well as modifying software to fix errors, adapt it to new hardware, improve its performance, or upgrade interfaces. You will also be involved in directing system testing and validation procedures, and also working with customers or departments on technical issues including software system design and maintenance.
+
+                            To be successful in this role, you will need knowledge of programming languages and the software development life-cycle.
+                             </p>
+                        <br />
+          
+                        <div>
+                          <span class="fw-bolder col-12">DATE:  </span>21/11/2021
+                        </div>
+          
+                        <div>
+                          <span class="fw-bolder col-md-6"> STIPEND : </span>Rs.10000 
+                          <span class="fw-bolder col-md-6"> ELIGIBILTY :  </span>Minimum of a Bachelor’s degree in computer science
+                        </div>
+                        <!-- <div>
+                          <span class="fw-bolder col-12">: </span>
+                        </div> -->
+                      </div>
+                                  <br />
+                      <div class="row float-end">
+                        <div class="d-inline-flex">
+                          <a
+                            href="https://www.linkedin.com/jobs/collections/recommended/?currentJobId=2756502572"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
+                            >To Know More</a
+                          >
+                          &nbsp; &nbsp;
+                          <a
+                            href="https://www.carta.healthcare/job/?gh_jid=4061839004&gh_src=74cec2de4us"
+                            class="
+                              p-2
+                              pe-lg-5
+                              ps-lg-5
+                              text-decoration-none
+                              text-success
+                              fs-6
+                              ps-lg-3
+                              btn-events
+                            "
+                            >Apply Now</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+		
+		
+      
+    </section>
+    <%- include('footer') %>
+    <script>
+		 function myFunction(){
+       var input, filter, cards, cardContainer,  titile,i;
+       input= document.getElementById("hire-explore");
+       filter = input.value.toUpperCase();
+       cardContainer = document.getElementById("explore-card");
+       cards = cardContainer.getElementsByClassName("card");
+       for(i=0;i<cards.length;i++){
+         title = cards[i].querySelector(".card-title");
+         if(title.innerText.toUpperCase().indexOf(filter)>-1){
+           cards[i].style.display="";
+         }
+         else{
+           cards[i].style.display ="none";
+         }
+       }
+     }
+ 
+	</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

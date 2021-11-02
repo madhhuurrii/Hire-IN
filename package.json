@@ -1,0 +1,53 @@
+{
+  "name": "Hire_IN",
+  "version": "1.0.0",
+  "description": "A web application to provide resource and platform for hiring students.\r Figma : https://www.figma.com/file/rDm6aTRyXshNb64iLAQiM1/HireIn?node-id=2%3A2",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhhuurrii/Hire_IN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhhuurrii/Hire_IN/issues"
+  },
+  "homepage": "https://github.com/madhhuurrii/Hire_IN#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.27.1",
+    "connect-ensure-login": "^0.1.1",
+    "cors": "^2.8.5",
+    "cucumber": "^7.0.0-rc.0",
+    "dompurify": "^2.3.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fs": "0.0.1-security",
+    "gridfs-stream": "^1.1.1",
+    "jsdom": "^18.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "marked": "^3.0.8",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.12",
+    "multer": "^1.4.3",
+    "multer-gridfs-storage": "^5.0.2",
+    "nodemon": "^2.0.14",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "path": "^0.12.7",
+    "router": "^1.3.5",
+    "slugify": "^1.6.1"
+  }
+}
