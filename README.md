@@ -31,3 +31,9 @@ helps technical recruiters manage the process more efficiently.
 - EJS
 - Nodejs
 
+# Conclusion 
+HireIN is an application that will help both the university students and the coordinators to
+manage the details of internships and hackathons. And with the help of this application, the
+student can have access to internship opportunities, hackathons opportunities, blogs which will
+help in preparation purposes and act as study material too. They will be able to get to read
+experience from the people who have worked in various huge companies.
