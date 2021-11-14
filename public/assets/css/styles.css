@@ -74,6 +74,13 @@ border: none;
 	border-radius: 5px;
 	color: #0B6623;
 }
+.bg-img{
+	/* background-image: url(../images/Frame\ 1\ \(1\).png); */
+	 /* background: linear-gradient(270deg,rgba(154, 253, 124, 0.493) 0%, rgba(80, 200, 118, 0.8) 100%);
+    */
+	background-repeat:no-repeat;
+	background-size: cover;
+}
 .hire-block1{
 	border-style: solid ;
 	border-color: #0B6623;
