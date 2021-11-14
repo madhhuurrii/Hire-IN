@@ -62,16 +62,13 @@
                         <div class="container events-container p-4 mb-5" id="explore-card">
                     <div class="row">
                       <div class="col-md-4">
-                        <img
-                          src="assets/images/goldman.jpg"
+                        <div
+                         
                           class="
-                            img-thumbnail img-fluid
-                            w-100
-                            events-bg-img
-                            rounded
-                            p-2
+                            img-thumbnail img-fluid preview-images
+                            
                           "
-                        />
+                        ></div>
                       </div>
                       <div class="col-md-8 p-3 events-desc">
                         <div class="row">
@@ -542,6 +539,7 @@
       
     </section>
     <%- include('footer') %>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 		 function myFunction(){
        var input, filter, cards, cardContainer,  titile,i;
@@ -559,7 +557,26 @@
          }
        }
      }
- 
+     $(document).ready(function(){
+       let imagesPreview = function(input, placeToInsertImagePreview){
+         if(input.files){
+           let filesAmount = input.files.length;
+           for(i=0;i< filesAmount; i++){
+             let reader = new FileReader();
+             reader.onload = function(event){
+               $($.parseHTML ("<img>"))
+                 .attr("src", event.target.result)
+                 .appendTo(placeToInsertImagePreview);
+
+             };
+             reader.readAsDataURL(input.files[i]);
+           }
+         }
+       };
+       $("#input-multi-files").on("change", function(){
+         imagesPreview(this, "div.preview-images");
+       });
+     });
 	</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

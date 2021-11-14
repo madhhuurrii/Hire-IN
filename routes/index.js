@@ -1,11 +1,14 @@
+const express = require('express');
 const hirexp = require('express').Router()
 const mongoose = require('mongoose')
 const path = require("path")
 const crypto = require("crypto")
 const multer = require("multer")
+const uploadContainer = require('./'); 
 const gridFs = require("multer-gridfs-storage")
 const gridFstream = require("gridfs-stream");
 const metod = require("method-override")
+const util = require('util');
 const Explore = require('../model/explore');
 
 // const path = require("path")
@@ -37,27 +40,8 @@ hirexp.get('/hirenow', (req, res) => {
 //   res.render('hireexplore')
 // })
 
+// 
 
-
-// const storage = new gridFs({
-//   url : MONGO_PROD_URI,
-//   file: (req, file)=>{
-//     return new Promise((resolve, reject)=>{
-//       crypto.randomBytes(16,(err,buf)=>{
-//         if(err){
-//           return reject(err);
-//         }
-//         const filename = buf.toString('hex')+path.extname(file.originalname);
-//         const fileinfo ={
-//           filename: filename,
-//           bucketName : 'explore'
-//         };
-//         resolve(fileinfo);
-//       });
-//     });
-//   }
-// });
-// const upload = multer({storage})
 
 
 //  Explore Page

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 // const path = require('path');
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const uploadContainer = require('./'); 
 const cors = require('cors')
 require("dotenv").config();
 
@@ -19,6 +20,8 @@ app.use('/', index);
 
 
 
+// 
+// app.post("/multiple-upload", uploadContainer.multer);
 
 
 //Import Route 
