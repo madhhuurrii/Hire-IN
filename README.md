@@ -23,14 +23,14 @@ constructed for the convenience of both the Coordinator and students. And this p
 provide study materials, blogs from experienced ones and about Hackathons too. And provide
 them to apply to Internships and Hackathons through LinkedIn.
 
-# Screenshots
+<!-- # Screenshots
 <p float="left">
 <img src="https://user-images.githubusercontent.com/64744084/139773490-09c09dbe-9380-49e1-af76-55b30c03d101.png" width="32%" height="50%">
 <img src="https://user-images.githubusercontent.com/64744084/139773497-dfa918b5-7128-43fc-8e0c-4dee8513e4c6.png" width="32%" height="420">
 <img src="https://user-images.githubusercontent.com/64744084/139773513-77c0ecc9-63a9-4cb3-8e16-1871e9d0120c.png"  width="32%" height="50%">
 <img src="https://user-images.githubusercontent.com/64744084/139773519-71e13474-53d1-424b-a5e4-36065b2b1a65.png" width="32%" height="70%">
 <img src="https://user-images.githubusercontent.com/64744084/139773523-f9827a71-47c5-43b5-80f8-0c02da228c3e.png"  width="32%" height="70%">
-</p>
+</p> -->
 
 # Tech Stack 
 - HTML,CSS
