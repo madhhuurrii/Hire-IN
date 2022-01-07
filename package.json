@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "nodemon app.js",
+    "type": "module",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,12 +37,14 @@
     "fs": "0.0.1-security",
     "gridfs-stream": "^1.1.1",
     "jsdom": "^18.1.1",
+    "json-server": "^0.17.0",
     "jsonwebtoken": "^8.5.1",
     "marked": "^4.0.4",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.13",
     "multer": "^1.4.3",
     "multer-gridfs-storage": "^5.0.2",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.15",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
