@@ -1,5 +1,5 @@
 {
-  "name": "Hire_IN",
+  "name": "",
   "version": "1.0.0",
   "description": "A web application to provide resource and platform for hiring students.\r Figma : https://www.figma.com/file/rDm6aTRyXshNb64iLAQiM1/HireIn?node-id=2%3A2",
   "main": "app.js",
@@ -25,7 +25,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
-    "cloudinary": "^1.28.0",
+    "cloudinary": "^1.28.1",
     "connect-ensure-login": "^0.1.1",
     "cors": "^2.8.5",
     "cucumber": "^7.0.0-rc.0",
