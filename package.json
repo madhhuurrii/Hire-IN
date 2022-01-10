@@ -36,7 +36,7 @@
     "express-session": "^1.17.2",
     "fs": "0.0.1-security",
     "gridfs-stream": "^1.1.1",
-    "jsdom": "^18.1.1",
+    "jsdom": "^19.0.0",
     "json-server": "^0.17.0",
     "jsonwebtoken": "^8.5.1",
     "marked": "^4.0.8",
