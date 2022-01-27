@@ -20,7 +20,7 @@
         <section class="p-lg-5 p-md-5 m-5">
             <div class="container hire-login-container p-5">
                 <div class="text-center pb-4 h2 hire-login-title">HireIN</div>
-                <form id="login-form" action="/index"  target="_blank">
+                <form id="login-form" action="/index">
                     <div class="form-group">
                         <label
                             for="exampleInputEmail1"
@@ -110,7 +110,7 @@ async function loginUser(event){
   if(result.status ==='ok'){
     console.log("got token", result.data);
     alert("loginned Successfully!")
-    window.open('/index');
+    window.location.replace('/index');
    
   }else{
     alert(result.error);
