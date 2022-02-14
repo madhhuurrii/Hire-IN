@@ -39,7 +39,7 @@
     "jsdom": "^19.0.0",
     "json-server": "^0.17.0",
     "jsonwebtoken": "^8.5.1",
-    "marked": "^4.0.10",
+    "marked": "^4.0.12",
     "method-override": "^3.0.0",
     "mongoose": "^6.1.5",
     "mongoose-date-format": "^1.2.0",
