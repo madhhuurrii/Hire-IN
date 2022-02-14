@@ -2,7 +2,9 @@ const express = require('express');
 const hirexp = require('express').Router()
 const mongoose = require('mongoose')
 const Explore = require('../model/explore');
-
+const fs= require('fs')
+const multer=require('multer')
+const path=require('path')
 // const path = require("path")
 
 
@@ -20,6 +22,9 @@ hirexp.get('/index', (req, res) => {
   res.render('index')
 })
 
+// hirexp.use(express.static(__dirname + '/public'));
+// hirexp.use('/uploads', express.static('uploads'));
+
 
 hirexp.get('/hireapply', (req, res) => {
   res.render('hireprep')
@@ -35,10 +40,13 @@ hirexp.get('/hirenow', (req, res) => {
 // 
 
 
-
+// var upload = multer({ storage: storage })
 //  Explore Page
-hirexp.post('/hirenow',  async (req, res) => {
-
+hirexp.post('/hirenow', async (req, res,next) => {
+  // console.log(JSON.stringify(req.file))
+  // var obj={
+  //   img: req.file.path
+  // }
   const {
     hirename,
     hireemail,
@@ -77,7 +85,7 @@ hirexp.post('/hirenow',  async (req, res) => {
       hirecompanyemail,
       hiredesc,
       hirelink,
-     
+      
     })
     console.log('Job Openeing created Successfully!', data1)
   
@@ -92,9 +100,9 @@ hirexp.post('/hirenow',  async (req, res) => {
   res.json({ status: 'ok' })
 })
 
-hirexp.get('/explore', async (req,res)=>{
+hirexp.get('/explore',(req,res)=>{
 
-    await Explore.find({}, function(err,explo){
+    Explore.find({}, function(err,explo){
         res.render('hireexplore',{
             exploList : explo
         })

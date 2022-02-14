@@ -19,6 +19,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(cors());
+app.use(express.static(__dirname + '/public'));
+app.use('/uploads', express.static('uploads'));
+
 app.use('/', auth);
 app.use('/', index);
 
