@@ -59,11 +59,12 @@
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="container pt-5 pb-4">
                   <%exploList.forEach(explo =>{%>
+                    <%items.forEach(function(image){%>
                         <div class="container events-container p-4 mb-5" id="explore-card">
                     <div class="row">
                       <div class="col-md-4">
                         <img
-                          src="/assets/images/goldman.jpg"
+                          src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
                           class="
                             img-thumbnail img-fluid preview-images
                             d-block w-100
@@ -134,6 +135,7 @@
                       </div>
                     </div>
                   </div>
+                  <%})%>
                   <%})%>
                     </div>
               </div>

@@ -6,7 +6,7 @@ const fs= require('fs')
 const multer=require('multer')
 const path=require('path')
 // const path = require("path")
-
+var imgModel = require('../model/img')
 
 require('dotenv').config()
 
@@ -14,7 +14,7 @@ mongoose
   .connect(process.env.MONGO_PROD_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  })
+  },6000000)
   .then(() => console.log('DB Connected'))
   .catch((err) => console.log(err))
 
@@ -37,7 +37,47 @@ hirexp.get('/hirenow', (req, res) => {
 //   res.render('hireexplore')
 // })
 
-// 
+//
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+var upload = multer({ storage: storage })
+
+hirexp.get('/profile',(req,res)=>{
+  res.render('index1')
+})
+
+hirexp.post('/explore', upload.single('profile-file'), function (req, res, next) {
+  // req.file is the `profile-file` file
+  // req.body will hold the text fields, if there were any
+  console.log(JSON.stringify(req.file))
+  // var response = '<a href="/">Home</a><br>'
+  // response += "Files uploaded successfully.<br>"
+  // response += `<img src="${req.file.path}" /><br>`
+  // return res.send(response)
+  var obj={
+    img:{
+      data: fs.readFileSync(path.join('./uploads/'+req.file.filename)),
+      contentType: 'image/png'
+    }
+  }
+  imgModel.create(obj,(err,item)=>{
+    if(err){
+      console.log(err)
+
+    }
+    else{
+      console.log("Done!")
+      res.redirect('/explore')
+    }
+    
+  })
+})
 
 
 // var upload = multer({ storage: storage })
@@ -103,10 +143,15 @@ hirexp.post('/hirenow', async (req, res,next) => {
 hirexp.get('/explore',(req,res)=>{
 
     Explore.find({}, function(err,explo){
-        res.render('hireexplore',{
-            exploList : explo
+       
+        imgModel.find({},function(err,items){
+          res.render('hireexplore',{
+            exploList : explo,
+            items:items
+        })
         })
     })
+    
     // console.log()
     
 })
