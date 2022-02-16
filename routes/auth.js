@@ -1,65 +1,75 @@
-const auth = require('express').Router();
+const auth = require("express").Router();
 
-const mongoose = require('mongoose');
-// const path = require('path');
-const User = require('../model/user');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const mongoose = require("mongoose");
+
+const User = require("../model/user");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
-// const Explore = require('../model/explore');
-const JWT_SECRET = 'sdkqwertyuiopsasdfghjklzxcvbnm,.!@#$%^&*()+_-;\qsbsnay\pe^jjjsnqll';
 
-mongoose.connect(process.env.MONGO_PROD_URI,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
- 
-}).then(()=> console.log("DB Connected"))
-.catch(err=>console.log(err))
+const JWT_SECRET =
+    "sdkqwertyuiopsasdfghjklzxcvbnm,.!@#$%^&*()+_-;qsbsnaype^jjjsnqll";
 
-auth.get('/',(req,res)=>{
+mongoose
+    .connect(process.env.MONGO_PROD_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log("DB Connected"))
+    .catch((err) => console.log(err));
 
-    res.render('login');
-})
-auth.get('/register',(req,res)=>{
+auth.get("/", (req, res) => {
+    res.render("login");
+});
+auth.get("/register", (req, res) => {
+    res.render("register");
+});
 
-    res.render('register');
-})
-
-auth.post('/login', async(req,res) =>{
+auth.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email }).lean()
-    if(!user){
-        return res.json({ status: 'error', error: 'Invalid email password'})
+    const user = await User.findOne({ email }).lean();
+    if (!user) {
+        return res.json({ status: "error", error: "Invalid email password" });
     }
-    if(await bcrypt.compare(password, user.password)){
-        const token = jwt.sign({ 
-            id: user._id, 
-            email : user.email
-        }, JWT_SECRET )
-        return res.json({ status: 'ok', data: token})
-        
+    if (await bcrypt.compare(password, user.password)) {
+        const token = jwt.sign(
+            {
+                id: user._id,
+                email: user.email,
+            },
+            JWT_SECRET
+        );
+        return res.json({ status: "ok", data: token });
     }
 
-    res.json({ status : "error", error: "Inavlid password" })
-})
+    res.json({ status: "error", error: "Inavlid password" });
+});
 
-auth.post('/register', async(req,res) =>{
-   
-    const { name, email, college, branch, year, contact, password: plainTextPassword , confirm}= req.body
- 
-    if(!email || typeof  email !== 'string'){
-        return  res.json({ status: 'error', error: 'Invalid Email' })
+auth.post("/register", async (req, res) => {
+    const {
+        name,
+        email,
+        college,
+        branch,
+        year,
+        contact,
+        password: plainTextPassword,
+        confirm,
+    } = req.body;
+
+    if (!email || typeof email !== "string") {
+        return res.json({ status: "error", error: "Invalid Email" });
     }
-    if(!plainTextPassword || typeof  email !== 'string'){
-     return  res.json({ status: 'error', error: 'Invalid Password' })
- }
- if(plainTextPassword.length<5){
-     return  res.json({ status: 'error', error: 'Passowrd too small' })
- }
- 
-    const password = await bcrypt.hash(plainTextPassword,10)
-    try{
+    if (!plainTextPassword || typeof email !== "string") {
+        return res.json({ status: "error", error: "Invalid Password" });
+    }
+    if (plainTextPassword.length < 5) {
+        return res.json({ status: "error", error: "Passowrd too small" });
+    }
+
+    const password = await bcrypt.hash(plainTextPassword, 10);
+    try {
         const response = await User.create({
             name,
             email,
@@ -68,22 +78,19 @@ auth.post('/register', async(req,res) =>{
             year,
             contact,
             password,
-            confirm
-        })
-        console.log("User created successfully!", response)
-        
-    } catch(error){
-        if(error.code === 11000){
-         return res.json({ status: 'error', error: 'Username already exists!' })
+            confirm,
+        });
+        console.log("User created successfully!", response);
+    } catch (error) {
+        if (error.code === 11000) {
+            return res.json({
+                status: "error",
+                error: "Username already exists!",
+            });
         }
-        throw error 
-       
+        throw error;
     }
-     res.json ({ status : 'ok' });
- })
+    res.json({ status: "ok" });
+});
 
-
-
-
-
- module.exports = auth;
+module.exports = auth;

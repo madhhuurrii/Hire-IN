@@ -544,44 +544,7 @@
     </section>
     <%- include('footer') %>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script>
-		 function myFunction(){
-       var input, filter, cards, cardContainer,  titile,i;
-       input= document.getElementById("hire-explore");
-       filter = input.value.toUpperCase();
-       cardContainer = document.getElementById("explore-card");
-       cards = cardContainer.getElementsByClassName("card");
-       for(i=0;i<cards.length;i++){
-         title = cards[i].querySelector(".card-title");
-         if(title.innerText.toUpperCase().indexOf(filter)>-1){
-           cards[i].style.display="";
-         }
-         else{
-           cards[i].style.display ="none";
-         }
-       }
-     }
-     $(document).ready(function(){
-       let imagesPreview = function(input, placeToInsertImagePreview){
-         if(input.files){
-           let filesAmount = input.files.length;
-           for(i=0;i< filesAmount; i++){
-             let reader = new FileReader();
-             reader.onload = function(event){
-               $($.parseHTML ("<img>"))
-                 .attr("src", event.target.result)
-                 .appendTo(placeToInsertImagePreview);
-
-             };
-             reader.readAsDataURL(input.files[i]);
-           }
-         }
-       };
-       $("#input-multi-files").on("change", function(){
-         imagesPreview(this, "div.preview-images");
-       });
-     });
-	</script>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

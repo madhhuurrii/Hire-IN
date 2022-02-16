@@ -1,10 +1,10 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose");
 
 var imageSchema = new mongoose.Schema({
-    img:{
+    img: {
         data: Buffer,
-        contentType: String
-    }
+        contentType: String,
+    },
 });
 
-module.exports = new mongoose.model('Image', imageSchema);
+module.exports = new mongoose.model("Image", imageSchema);
