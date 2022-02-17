@@ -1,7 +1,6 @@
 const auth = require("express").Router();
 
 const mongoose = require("mongoose");
-
 const User = require("../model/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -55,7 +54,7 @@ auth.post("/register", async (req, res) => {
         year,
         contact,
         password: plainTextPassword,
-        confirm,
+        // confirm,
     } = req.body;
 
     if (!email || typeof email !== "string") {
@@ -67,7 +66,7 @@ auth.post("/register", async (req, res) => {
     if (plainTextPassword.length < 5) {
         return res.json({ status: "error", error: "Passowrd too small" });
     }
-
+    
     const password = await bcrypt.hash(plainTextPassword, 10);
     try {
         const response = await User.create({
@@ -78,7 +77,7 @@ auth.post("/register", async (req, res) => {
             year,
             contact,
             password,
-            confirm,
+            // confirm,
         });
         console.log("User created successfully!", response);
     } catch (error) {

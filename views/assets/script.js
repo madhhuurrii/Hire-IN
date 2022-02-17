@@ -11,7 +11,7 @@ async function regUser(event){
   const contact = document.getElementById("contact").value;
 
   const password = document.getElementById("password").value;
-  const confirm = document.getElementById("confirm").value;
+  // const confirm = document.getElementById("confirm").value;
 
   const result =await fetch("/register", {
     method : 'POST',
@@ -26,7 +26,7 @@ async function regUser(event){
       year,
       contact,
       password,
-      confirm
+      // confirm
     })
 
   }).then((res)=> res.json())
@@ -35,7 +35,7 @@ async function regUser(event){
 
     alert("Registration Successful!");
    
-    window.open('/');
+    window.redirect('/');
   }else{
     alert(result.error);
   }

@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
         year: { type: Number, require: true },
         contact: { type: Number, require: true },
         password: { type: String, require: true },
-        confirm: { type: String, require: true },
+        // confirm: { type: String, require: true },
     },
     { collection: "users" }
 );
