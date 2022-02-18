@@ -245,6 +245,8 @@
        for(i=0;i<cards.length;i++){
          title = cards[i].querySelector(".card-title");
          if(title.innerText.toUpperCase().indexOf(filter)>-1){
+            //  console.log(title.innerText.toUpperCase().indexOf(filter))
+            //  console.log(filter)
            cards[i].style.display="";
          }
          else{
@@ -255,7 +257,7 @@
  
 	
     </script>
-    <script src="assets/hireprep.js"></script>
+    <!-- <script src="assets/hireprep.js"></script> -->
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

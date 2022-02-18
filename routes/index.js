@@ -5,7 +5,7 @@ const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 
-var imgModel = require("../model/img");
+const imgModel = require("../model/img");
 
 require("dotenv").config();
 

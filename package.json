@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon js,ejs app.js",
     "type": "module",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
