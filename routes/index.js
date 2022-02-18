@@ -9,6 +9,7 @@ const imgModel = require("../model/img");
 
 require("dotenv").config();
 
+// Database Connect
 mongoose
     .connect(
         process.env.MONGO_PROD_URI,
@@ -21,20 +22,23 @@ mongoose
     .then(() => console.log("DB Connected"))
     .catch((err) => console.log(err));
 
+
+// Home page 
 hirexp.get("/index", (req, res) => {
     res.render("index");
 });
 
-
+// HirePrep page
 hirexp.get("/hireapply", (req, res) => {
     res.render("hireprep");
 });
 
+//HireNow Page
 hirexp.get("/hirenow", (req, res) => {
     res.render("hirenow");
 });
 
-//
+//Image storage to local 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "./uploads");
@@ -45,9 +49,11 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
+// Upload Image Page
 hirexp.get("/profile", (req, res) => {
     res.render("index1");
 });
+
 
 hirexp.post(
     "/explore",
