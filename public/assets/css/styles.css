@@ -162,7 +162,7 @@ border: none;
 	color: black;
 	font-family: 'Lora';
 	box-shadow: inset 0 0 0 #0B6623;
-	-webkit-transition: ease-out0.4s;
+	-webkit-transition: ease-out 0.4s;
 	-moz-transition: ease-out 0.4s;
 	transition: ease-out 0.4s;
 }
