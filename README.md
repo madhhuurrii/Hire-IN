@@ -3,7 +3,7 @@
 <!-- A web application to provide resource and platform for hiring students. -->
 <!-- Figma : https://www.figma.com/file/rDm6aTRyXshNb64iLAQiM1/HireIn?node-id=2%3A2
  -->
-# HireIN
+# HIREIN
 HireIN is an application developed using HTML, CSS, Nodejs, Expressjs, MongoDB and will be
 hosted by Heruko. It is an opportunity and job portal to host recruitment opportunities for
 employers as well as expose students to various opportunities available. Through our portal, we
