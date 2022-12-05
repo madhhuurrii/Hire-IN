@@ -41,7 +41,7 @@
     "jsonwebtoken": "^8.5.1",
     "marked": "^4.0.10",
     "method-override": "^3.0.0",
-    "mongoose": "^6.1.5",
+    "mongoose": "^6.7.5",
     "mongoose-date-format": "^1.2.0",
     "mongoose-schema-formatdate": "^1.0.0",
     "multer": "^1.4.4",
