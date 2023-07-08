@@ -57,6 +57,6 @@
     "slugify": "^1.6.5"
   },
   "engines": {
-    "node": ">=NODE_JS_VERSION"
+    "node": ">=14.17.0"
  }
 }
